@@ -1,9 +1,11 @@
 NASHPATH?=$(HOME)/nash
 INSTALL_DIR?=$(NASHPATH)/lib/nashcomplete
 
-install: clean
+.PHONY: install
+install: uninstall
 	mkdir $(INSTALL_DIR)
 	cp *.sh $(INSTALL_DIR)
 
-clean:
+.PHONY: uninstall
+uninstall:
 	rm -rf $(INSTALL_DIR)
