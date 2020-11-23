@@ -32,7 +32,7 @@ fn _nash_complete_programs_paths() {
         var validPaths = ()
 
         for path in $paths {
-                var _, status <= ls $path
+                var _, status <= ls $path >[2=] /dev/null
                 if $status == "0" {
                         validPaths <= append($validPaths, $path)
                 }
